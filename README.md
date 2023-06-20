@@ -6,8 +6,13 @@ This example shows how to use Resend with [Supabase Edge Functions](https://supa
 
 To get the most out of this guide, you’ll need to:
 
-* [Create an API key](https://resend.com/api-keys)
-* [Verify your domain](https://resend.com/domains)
+- [Create an API key](https://resend.com/api-keys)
+- [Verify your domain](https://resend.com/domains)
+- Create your `.env` file and set your `RESEND_API_KEY`
+
+```bash
+cp .env.example .env
+```
 
 ## Instructions
 
@@ -15,16 +20,18 @@ To get the most out of this guide, you’ll need to:
 
 2. Run function locally:
 
-  ```sh
-supabase functions start
-supabase functions serve resend --no-verify-jwt
-  ```
+```sh
+supabase start
+supabase functions serve --no-verify-jwt --env-file .env
+```
+
+GET http://localhost:54321/functions/v1/resend
 
 3. Deploy function to Supabase:
 
-  ```sh
-supabase functions deploy resend
-  ```
+```sh
+supabase functions deploy resend --no-verify-jwt
+```
 
 ## License
 
