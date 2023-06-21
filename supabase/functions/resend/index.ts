@@ -10,8 +10,8 @@ const handler = async (_request: Request): Promise<Response> => {
       Authorization: `Bearer ${RESEND_API_KEY}`,
     },
     body: JSON.stringify({
-      from: "onboarding@resend.dev",
-      to: "delivered@resend.dev",
+      from: "Acme <onboarding@resend.dev>",
+      to: ["delivered@resend.dev"],
       subject: "hello world",
       html: "<strong>it works!</strong>",
     }),
