@@ -25,5 +25,4 @@ const handler = async (_request: Request): Promise<Response> => {
   });
 };
 
-// Serves with the port 8000 on hostname "127.0.0.1".
 Deno.serve(handler)
